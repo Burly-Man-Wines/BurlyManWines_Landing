@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://burly-man-wines.github.io/BurlyManWines/sitemap.xml

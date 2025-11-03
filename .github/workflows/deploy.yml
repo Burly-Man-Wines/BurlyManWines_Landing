@@ -1,0 +1,44 @@
+name: Deploy Burly Man Wines Landing Page
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'public/**'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Safety check (prevent accidental private file exposure)
+        run: |
+          # Look for restricted files (PDFs, CSVs) outside of allowed directories
+          if [ "$(find . -type f ! -path './public/*' ! -path './docs/*' ! -path './images/*' \( -name '*.pdf' -o -name '*.csv' \))" ]; then
+            echo "❌ Found restricted files outside allowed folders (public, docs, images). Canceling deploy."
+            exit 1
+          else
+            echo "✅ No restricted files found outside allowed folders. Safe to deploy."
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
