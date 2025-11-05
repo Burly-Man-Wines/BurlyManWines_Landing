@@ -25,14 +25,12 @@ function initHeaderScripts() {
   const header = document.querySelector("header");
   let lastScrollY = 0;
 
-  // ✅ MOBILE MENU TOGGLE
   if (toggle && navMenu) {
     toggle.addEventListener("click", () => {
       toggle.classList.toggle("active");
       navMenu.classList.toggle("active");
     });
 
-    // Close menu when clicking a link
     document.querySelectorAll("#nav-menu a").forEach(link => {
       link.addEventListener("click", () => {
         toggle.classList.remove("active");
@@ -40,20 +38,18 @@ function initHeaderScripts() {
       });
     });
 
-    // Close on scroll
+    // close on scroll
     window.addEventListener("scroll", () => {
       toggle.classList.remove("active");
       navMenu.classList.remove("active");
     });
   }
 
-  // ✅ SCROLL SHADOW / DARKEN
+  // header shadow
   window.addEventListener("scroll", () => {
     const currentY = window.scrollY;
-    if (header) {
-      if (currentY > 20) header.classList.add("scrolled");
-      else header.classList.remove("scrolled");
-    }
+    if (currentY > 20) header.classList.add("scrolled");
+    else header.classList.remove("scrolled");
     lastScrollY = currentY;
   });
 }
