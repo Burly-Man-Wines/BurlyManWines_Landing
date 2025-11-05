@@ -1,107 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Burly Man Wines — Because real men swirl too." />
-    <meta property="og:title" content="Burly Man Wines" />
-    <meta property="og:description" content="Because real men swirl too." />
-    <meta property="og:image" content="images/Burly_Man_Wines_Logo_Resized_Under1MB.png" />
-    <meta property="og:url" content="https://burlymanwines.com" />
-    <title>Burly Man Wines</title>
-    <style>
-      :root {
-        --accent: #ff6a00;
-        --bg: #0e0e0e;
-        --text: #ffffff;
-        --font-primary: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        background: var(--bg);
-        color: var(--text);
-        font-family: var(--font-primary);
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
-      }
-      header {
-        margin-top: 6vh;
-      }
-      header img {
-        width: 220px;
-        height: auto;
-        border-radius: 16px;
-        filter: drop-shadow(0 0 10px rgba(255, 106, 0, 0.2));
-      }
-      h1 {
-        font-size: 2.5rem;
-        margin-top: 1rem;
-        letter-spacing: 0.05em;
-      }
-      h2 {
-        font-weight: 400;
-        font-size: 1.25rem;
-        color: #cccccc;
-        margin-top: 0.5rem;
-      }
-      main {
-        max-width: 600px;
-        margin: 3rem 1rem;
-        line-height: 1.6;
-      }
-      a.button {
-        display: inline-block;
-        margin-top: 1.5rem;
-        padding: 0.75rem 1.5rem;
-        background: var(--accent);
-        color: var(--text);
-        font-weight: 600;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: background 0.3s ease;
-      }
-      a.button:hover {
-        background: #ff8533;
-      }
-      footer {
-        font-size: 0.9rem;
-        color: #888;
-        padding: 1.5rem 0;
-      }
-      footer span {
-        color: var(--accent);
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Burly Man Wines | Because Real Men Swirl Too</title>
+  <meta name="description" content="Burly Man Wines — where bold humor meets bold wine. Born from campfire jokes and tasting trips, now a cult creative brand for the burly and the bold." />
+  <meta property="og:title" content="Burly Man Wines" />
+  <meta property="og:description" content="Because real men swirl too. Discover the humor, grit, and friendship behind Burly Man Wines." />
+  <meta property="og:image" content="images/logo_large.png" />
+  <meta name="theme-color" content="#ff6a00" />
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #fff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-  <body>
-    <header>
-      <img src="images/Burly_Man_Wines_Logo_Resized_Under1MB.png" alt="Burly Man Wines Logo" />
-      <h1>Burly Man Wines</h1>
-      <h2>Because real men swirl too.</h2>
-    </header>
+    header {
+      background-color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      border-bottom: 2px solid #ff6a00;
+    }
+    header .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+    }
+    header .brand img {
+      height: 40px;
+      width: auto;
+      margin-right: 0.75rem;
+    }
+    header .brand span {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #ff6a00;
+    }
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #ff6a00;
+    }
 
-    <main>
-      <p>
-        Crafted with equal parts grit and good humor, Burly Man Wines celebrates the art of
-        fine wine for those who build, fix, grill, and live full-throttle. From
-        <em>Brosé</em> to <em>Boiled Peanut Noir</em>, our varietals don’t just taste bold —
-        they tell stories worth retelling.
-      </p>
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 85vh;
+      padding: 0 1rem;
+      background: radial-gradient(circle at top, rgba(255,106,0,0.15), rgba(0,0,0,0.8) 70%);
+      animation: fadeIn 1.8s ease;
+    }
 
-      <a href="mailto:info@burlymanwines.com" class="button">Contact Us</a>
-    </main>
+    .hero img {
+      width: 200px;
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 1.5rem;
+      animation: float 6s ease-in-out infinite;
+    }
 
-    <footer>
-      © <span>Burly Man Wines</span> — All Rights Reserved
-    </footer>
-  </body>
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #ff6a00;
+      margin: 0.5rem 0;
+    }
+
+    .hero p {
+      color: #ccc;
+      font-size: 1.1rem;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .hero button {
+      margin-top: 2rem;
+      background-color: #ff6a00;
+      color: #fff;
+      font-size: 1.1rem;
+      padding: 0.8rem 1.8rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: #ffa14d;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: #888;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      border-top: 1px solid #333;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="brand">
+      <img src="images/logo_small.png" alt="Burly Man Wines Logo" />
+      <span>Burly Man Wines</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="images/logo_large.png" alt="Burly Man Wines Logo" />
+    <h1>Because Real Men Swirl Too</h1>
+    <p>
+      Burly Man Wines blends bold humor with even bolder taste.  
+      What started as a campfire joke among friends is now a creative brand celebrating those who get their hands dirty —  
+      the ones who fix, fish, build, and still appreciate a good swirl.
+    </p>
+    <button onclick="window.location.href='mailto:info@burlymanwines.com'">
+      Contact Us
+    </button>
+  </section>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear())</script> Burly Man Wines. All rights reserved.
+  </footer>
+</body>
 </html>
