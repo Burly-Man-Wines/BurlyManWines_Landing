@@ -266,7 +266,7 @@ footer {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Mobile layout: show hamburger, hide nav links */
+/* ===== Mobile layout: hamburger navigation ===== */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -277,11 +277,14 @@ footer {
     top: 70px;
     right: 0;
     background: #1a1a1a;
-    flex-direction: column;
+    flex-direction: column; /* stack vertically */
+    align-items: flex-start; /* align text left inside drawer */
     width: 200px;
     border-left: 2px solid #ff6a00;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
+    padding: 1rem 1.5rem;
+    z-index: 1000;
   }
 
   header nav.active {
@@ -289,7 +292,14 @@ footer {
   }
 
   header nav a {
-    margin: 1rem;
+    display: block;
+    margin: 0.75rem 0;
     font-size: 1.1rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  header .brand span {
+    font-size: 1.2rem;
   }
 }
