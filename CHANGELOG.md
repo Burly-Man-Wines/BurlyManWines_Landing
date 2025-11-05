@@ -1,0 +1,78 @@
+# 🧾 Burly Man Wines — Changelog
+All notable changes to this project will be documented here.  
+This project adheres to [Semantic Versioning 2.0.0](https://semver.org/).
+
+---
+
+## [Unreleased]
+### 🚧 Planned / In Progress
+- Modularize footer + header partials into template includes for future pages (done → verify pattern).
+- Add cork-pop or glass-clink micro-animation in footer icons.
+- Add “Founders” photo caricatures and bio tiles.
+- Add favicon set & metadata for SEO/social share.
+
+---
+
+## [1.0.1] — 2025-11-04
+### ✨ Added
+- Introduced **hero logo scale-and-fade animation** for a smoother first impression.
+- Implemented **header fade-down** and **footer fade-up** animations for visual continuity.
+- Added `CHANGELOG.md` (Keep a Changelog format) and `.gitignore` for repo hygiene and tracking.
+- Began groundwork for versioning and changelog automation (planned `v1.1.0`).
+
+### 🧹 Changed
+- Consolidated final production-ready `style.css` with clean order (Base → Layout → Components → Animations → Responsive).
+- Moved changelog to **repo root** for standard GitHub visibility.
+- Adjusted desktop hero padding and spacing for consistent footer separation.
+
+### 🪲 Fixed
+- Occasional overlap between hero and footer on desktop viewports.
+- Header opacity flash during load (replaced JS fade with pure CSS animation).
+
+---
+
+## [1.0.0] — 2025-11-04
+### ✨ Added
+- Introduced coordinated **header**, **hero**, and **footer** animations  
+  → Header fades down, hero logo scales and floats, footer fades up.
+- Created responsive, mobile-optimized **About Us** page with dynamic header/footer.
+- Introduced modular structure:
+  - `/partials/header.html`
+  - `/partials/footer.html`
+  - `/scripts/header.js`
+  - `/scripts/footer.js`
+  - `/styles/style.css`
+- Implemented animated, branded **footer** with social/email links.
+- Added SEO-ready meta tags and structured layout for GitHub Pages.
+- Refined **desktop layout** to prevent hero/footer overlap.
+- Added subtle hover effects and brand-consistent accent colors.
+
+### 🧹 Changed
+- Consolidated inline CSS into `style.css` for maintainability.
+- Organized stylesheet by hierarchy: Base → Layout → Components → Animations → Responsive.
+- Unified hover color palette (`#ff6a00` → `#ffa14d`).
+
+### 🪲 Fixed
+- Footer overlap with “Contact Us” button on desktop displays.
+- Header padding on large viewports for better alignment.
+
+---
+
+## [0.9.0] — 2025-11-03
+### 🏗 Initial Setup
+- Created repo structure for **Burly Man Wines Landing Page**.
+- Added favicon, base index page, and domain setup via IONOS → GitHub Pages.
+- Connected `burlymanwines.com` to custom DNS (A + CNAME records).
+- Verified Google Workspace domain mail delivery.
+
+---
+
+## 🧑‍💻 Maintainers
+- Tim Taylor (@TimTaylor) — Engineering & Creative Lead  
+- Alex Suescun — Content & Copy  
+- Pam Rogers — Design & AI Advocacy  
+- Full Founders Group — Burly Man Wines
+
+---
+
+_“Because real men swirl too.”_
