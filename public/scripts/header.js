@@ -1,5 +1,3 @@
-// /public/scripts/header.js
-
 // Inject the header HTML dynamically
 document.addEventListener("DOMContentLoaded", async () => {
   try {
@@ -8,8 +6,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.body.insertAdjacentHTML("afterbegin", headerHTML);
 
     // Once injected, initialize header behavior
-    document.querySelector("header").style.opacity = "0";
-    setTimeout(() => (document.querySelector("header").style.opacity = "1"), 100);
+    const header = document.querySelector("header");
+    if (header) {
+      header.style.opacity = "0";
+      setTimeout(() => (header.style.opacity = "1"), 100);
+    }
     initHeaderScripts();
   } catch (err) {
     console.error("Failed to load header:", err);
@@ -22,6 +23,7 @@ function initHeaderScripts() {
   const header = document.querySelector("header");
   let lastScrollY = 0;
 
+  // ===== Mobile menu toggle =====
   if (toggle && navMenu) {
     toggle.addEventListener("click", () => {
       toggle.classList.toggle("active");
@@ -35,20 +37,25 @@ function initHeaderScripts() {
       });
     });
 
+    // Close menu on scroll
     window.addEventListener("scroll", () => {
       toggle.classList.remove("active");
       navMenu.classList.remove("active");
     });
   }
 
-  // Scroll shrink/darken behavior
+  // ===== Scroll shadow / darken effect =====
   window.addEventListener("scroll", () => {
     const currentY = window.scrollY;
-    if (currentY > 20 && currentY > lastScrollY) {
+
+    // Add/remove shadow and subtle background darkening when scrolled down
+    if (currentY > 20) {
       header.classList.add("scrolled");
-    } else if (currentY < 20 || currentY < lastScrollY) {
+    } else {
       header.classList.remove("scrolled");
     }
+
+    // Optional future: hide-on-scroll-down logic
     lastScrollY = currentY;
   });
 }
