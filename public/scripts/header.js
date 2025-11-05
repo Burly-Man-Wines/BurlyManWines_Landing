@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.body.insertAdjacentHTML("afterbegin", headerHTML);
 
     // Once injected, initialize header behavior
+    document.querySelector("header").style.opacity = "0";
+    setTimeout(() => (document.querySelector("header").style.opacity = "1"), 100);
     initHeaderScripts();
   } catch (err) {
     console.error("Failed to load header:", err);
