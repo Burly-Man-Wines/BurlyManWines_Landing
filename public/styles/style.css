@@ -91,9 +91,9 @@ header nav a:hover {
 }
 
 .hero img {
-  width: 380px;
-  max-width: 90%;
+  width: clamp(420px, 35vw, 1024px); /* scales smoothly from 420px up to 1024px */
   height: auto;
+  max-width: 90%;
   margin-bottom: 1.5rem;
   animation: float 6s ease-in-out infinite;
 }
@@ -219,20 +219,15 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .hero {
-    min-height: calc(100vh - 220px);
-    padding: 2rem 1rem 7rem;
+  .hero img {
+    width: clamp(320px, 50vw, 600px);
   }
-  .hero img { width: 320px; }
 }
 
 @media (max-width: 600px) {
-  .hero {
-    min-height: calc(100vh - 180px);
-    padding: 1.5rem 1rem 6rem;
+  .hero img {
+    width: clamp(260px, 70vw, 400px);
   }
-  .hero img { width: 260px; }
-  header nav a { margin-left: 1rem; font-size: 0.9rem; }
 }
 
 /* ===== Mobile Menu (Hamburger) ===== */
