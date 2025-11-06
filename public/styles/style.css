@@ -16,12 +16,21 @@ html, body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
   background-color: #0e0e0e;
   color: #fff;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   text-align: center;
   overflow-x: hidden;
   padding-top: 90px; /* matches fixed header height */
+}
+
+/* new rule for main */
+main {
+  flex: 1; /* pushes footer to the bottom when content is short */
 }
 
 /* ===== LAYOUT: HEADER ===== */
