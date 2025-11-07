@@ -23,28 +23,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate Deployment Summary
-        run: |
-          echo "### Deployment Summary - $(date)" > deployment-summary.md
-          echo "" >> deployment-summary.md
-          echo "**Deployed Commit:** ${{ github.sha }}" >> deployment-summary.md
-          echo "" >> deployment-summary.md
-          echo "**Recent Commits:**" >> deployment-summary.md
-          git log -n 10 --name-status --pretty=format:"- %h %s (%cr)" >> deployment-summary.md
-
-      - name: Upload Deployment Summary Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: deployment-summary
-          path: deployment-summary.md
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "public" # 👈 THIS LINE IS CRUCIAL
 
   deploy:
     environment:
