@@ -26,10 +26,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      # 👇 Cache-busting step
+      - name: Invalidate GitHub Pages cache
+        run: |
+          echo "Triggering cache-bust timestamp..."
+          echo "<!-- $(date) -->" >> public/index.html
+
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "public" # 👈 THIS LINE IS CRUCIAL
+          path: "public" # 👈 deploys from your /public directory
 
   deploy:
     environment:
