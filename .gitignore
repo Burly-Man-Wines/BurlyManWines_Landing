@@ -49,6 +49,11 @@ robots.txt
 *.tar
 *.gz
 
+# Local deploy tracking (never synced)
+deploy-history.md
+update-deploy-history.sh
+.deploy-last-hash
+
 # ---- Misc ----
 logs/
 tmp/
