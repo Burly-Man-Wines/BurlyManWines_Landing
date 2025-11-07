@@ -20,9 +20,19 @@ public/                       → Public website files
 
 ---
 
+### 🧰 Tooling Spotlight
+
+This project includes a local-only deployment tracker to log incremental commit history.  
+Run it anytime from your terminal to update your private ledger:
+
+```bash
+./update-deploy-history.sh
+
+---
+
 ### 📜 Changelog
 
-All notable updates and release notes are documented in the project’s  
+All notable updates and release notes are documented in the project’s
 [**CHANGELOG.md**](./CHANGELOG.md)
 
 ---
@@ -34,3 +44,4 @@ Email: [info@burlymanwines.com](mailto:info@burlymanwines.com)
 ---
 
 _“Because real men swirl too.”_
+```
