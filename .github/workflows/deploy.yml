@@ -1,16 +1,5 @@
 name: Deploy Burly Man Wines
-
-# 🏷️ Dynamic, readable workflow run name (with safe substring truncation)
-run-name: >
-  Deploy — ${
-    {
-      'msg': github.event.head_commit.message,
-      'short': (github.event.head_commit.message != null && github.event.head_commit.message != '') 
-        && github.event.head_commit.message[0:60] 
-        || format('Commit {0}', github.sha)
-    }.short
-  }
-
+run-name: Deploy — ${{ github.event.head_commit.message || format('Commit {0}', github.sha) }}
 on:
   push:
     branches:
